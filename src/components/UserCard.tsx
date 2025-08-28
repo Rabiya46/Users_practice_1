@@ -1,5 +1,4 @@
 import type { Users } from "../constants";
-import Button from "./UI/Button";
 import "./users.css";
 
 interface UserProps {
@@ -7,9 +6,7 @@ interface UserProps {
 }
 
 const UserCard = ({ user }: UserProps) => {
-  const { firstName, email, gender, carModel, image, id } = user;
-
-  const handleClickById = () => alert("Id: " + id);
+  const { firstName, email, gender, carModel, image } = user;
 
   return (
     <div className="user-card">
@@ -19,8 +16,6 @@ const UserCard = ({ user }: UserProps) => {
       <p>{email}</p>
       <p>{gender}</p>
       <p>{carModel}</p>
-
-      <Button text="Показать id" onClick={handleClickById} />
     </div>
   );
 };
